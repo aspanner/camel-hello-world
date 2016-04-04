@@ -34,23 +34,14 @@
       While it is not required to assign id's to the <camelContext/> and <route/> elements, it is a good idea
       to set those for runtime management purposes (logging, JMX MBeans, ...)
     -->
-    <camelContext id="log-example-context" xmlns="http://camel.apache.org/schema/blueprint" >
-
-        <!--
-          A very simple Camel route, that uses a timer to trigger a message every 5 second.
-
-          The <setBody> sets a body into the Camel Message.
-
-          The <log/> elements are used to add human-friendly business logging statements. They make it easier to see what the
-          route is doing.
-        -->
-        <route id="log-route">
-          <from uri="timer:foo?period=5s"/>
-            <setBody>
-                <simple>Hello from Fabric based Camel route!</simple>
-            </setBody>
-            <log message=">>> ${body} : ${sys.runtime.id}"/>
-        </route>
-    </camelContext>
+    <camelContext id="log-example-context" xmlns="http://camel.apache.org/schema/blueprint">
+  <route id="log-route">
+    <from uri="timer:foo?period=5s"/>
+    <setBody>
+      <simple>Hello from Fabric based Camel route from Andy!</simple>
+    </setBody>
+    <log message="&gt;&gt;&gt; ${body} : ${sys.runtime.id}"/>
+  </route>
+</camelContext>
 
 </blueprint>
