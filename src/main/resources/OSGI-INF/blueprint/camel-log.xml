@@ -38,7 +38,7 @@
   <route id="log-route">
     <from uri="timer:foo?period=5s"/>
     <setBody>
-      <simple>Hello from Fabric based Camel route from Andreas!</simple>
+      <simple>Hello from Camel route!</simple>
     </setBody>
     <log message="&gt;&gt;&gt; ${body} : ${sys.runtime.id}"/>
   </route>
